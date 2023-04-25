@@ -1,0 +1,331 @@
+@use '../scss' as *;
+
+// RESETS
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+// BODY
+body {
+  background-color: $light-grayish-blue;
+  font-family: $barlow;
+  font-size: $body-font;
+  min-height: 100vh;
+  @include colCenter;
+}
+
+// DESKTOP
+@include onDesktop {
+  .testimonials {
+    width: 1110px;
+    height: 575px;
+    display: grid;
+    grid-template-areas:
+      'daniel daniel daniel jonathan kira'
+      'jeanette patrick patrick patrick kira';
+    gap: 1.5rem;
+
+    &__testimony {
+      padding: 1.5rem 2rem;
+
+      &-header {
+        margin-bottom: 1rem;
+
+        &_avatar {}
+
+        &_id {
+          &-name {}
+
+          &-role {}
+        }
+      }
+
+      &-body {
+        &_title {
+          margin-bottom: 1.5rem;
+        }
+
+        &_text {
+          line-height: 1.3rem;
+        }
+      }
+    }
+  }
+}
+
+// MOBILE
+@include onMobile {
+  .testimonials {
+    margin: 5rem 0;
+
+    &__testimony {
+      padding: 1.5rem 2rem;
+      width: 330px;
+      margin-bottom: 1.5rem;
+
+      &-header {
+        margin-bottom: 0.85rem;
+
+        &_avatar {}
+
+        &_id {
+          &-name {}
+
+          &-role {}
+        }
+      }
+
+      &-body {
+
+        &_title {
+          margin-bottom: 1.2rem;
+        }
+
+        &_text {
+          line-height: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+// GENERAL
+.testimonials {
+
+  &__testimony {
+    border-radius: 10px;
+    box-shadow: 5px 5px 25px 5px rgba(black, 0.05);
+
+    &-header {
+      display: flex;
+
+      &_avatar {
+        width: 30px;
+        margin-right: 1rem;
+
+        img {
+          border-radius: 50%;
+          width: 100%;
+          border-style: solid;
+          border-width: 2px;
+        }
+      }
+
+      &_id {
+        &-name {
+          font-size: 0.8rem;
+          font-weight: $semi;
+        }
+
+        &-role {
+          font-size: 0.7rem;
+          font-weight: $med;
+        }
+      }
+    }
+
+    &-body {
+      &_title {
+        font-size: 1.2rem;
+        font-weight: $semi;
+      }
+
+      &_text {
+        font-weight: $med;
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .daniel {
+    background-color: $violet;
+    background-image: url('/assets/img/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position: 80% 0%;
+    grid-area: daniel;
+
+    .testimonials {
+      &__testimony {
+        &-header {
+          &_avatar {
+            img {
+              border-color: rgba($white, 0.5);
+            }
+          }
+
+          &_id {
+            &-name {
+              color: $white;
+            }
+
+            &-role {
+              color: rgba($white, 0.5);
+            }
+          }
+        }
+
+        &-body {
+          &_title {
+            color: $white;
+          }
+
+          &_text {
+            color: rgba($white, 0.7);
+          }
+        }
+      }
+    }
+  }
+
+  .jonathan {
+    background-color: $grayish-blue;
+    grid-area: jonathan;
+
+    .testimonials {
+      &__testimony {
+        &-header {
+          &_avatar {
+            img {
+              border-color: rgba($white, 0.5);
+            }
+          }
+
+          &_id {
+            &-name {
+              color: $white;
+            }
+
+            &-role {
+              color: rgba($white, 0.5);
+            }
+          }
+        }
+
+        &-body {
+          &_title {
+            color: $white;
+          }
+
+          &_text {
+            color: rgba($white, 0.7);
+          }
+        }
+      }
+    }
+  }
+
+  .jeanette {
+    background-color: $white;
+    grid-area: jeanette;
+
+    .testimonials {
+      &__testimony {
+        &-header {
+          &_avatar {
+            img {
+              border-color: rgba($grayish-blue, 0.5);
+            }
+          }
+
+          &_id {
+            &-name {
+              color: $grayish-blue;
+            }
+
+            &-role {
+              color: rgba($grayish-blue, 0.5);
+            }
+          }
+        }
+
+        &-body {
+          &_title {
+            color: $grayish-blue;
+          }
+
+          &_text {
+            color: rgba($grayish-blue, 0.7);
+          }
+        }
+      }
+    }
+  }
+
+  .patrick {
+    background-color: $blackish-blue;
+    grid-area: patrick;
+
+    .testimonials {
+      &__testimony {
+        &-header {
+          &_avatar {
+            img {
+              border-color: rgba($white, 0.5);
+            }
+          }
+
+          &_id {
+            &-name {
+              color: $white;
+            }
+
+            &-role {
+              color: rgba($white, 0.5);
+            }
+          }
+        }
+
+        &-body {
+          &_title {
+            color: $white;
+          }
+
+          &_text {
+            color: rgba($white, 0.7);
+          }
+        }
+      }
+    }
+  }
+
+  .kira {
+    background-color: $white;
+    grid-area: kira;
+
+    .testimonials {
+      &__testimony {
+        &-header {
+          &_avatar {
+            img {
+              border-color: rgba($grayish-blue, 0.5);
+            }
+          }
+
+          &_id {
+            &-name {
+              color: $grayish-blue;
+            }
+
+            &-role {
+              color: rgba($grayish-blue, 0.5);
+            }
+          }
+        }
+
+        &-body {
+          &_title {
+            color: $grayish-blue;
+          }
+
+          &_text {
+            color: rgba($grayish-blue, 0.7);
+          }
+        }
+      }
+    }
+  }
+}
